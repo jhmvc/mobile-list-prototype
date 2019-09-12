@@ -21,5 +21,21 @@ $(function () {
             // Append tableRow to the body of the <table>
             $(tableRow).appendTo("#incident-data tbody");
         });
+    }); //END .getJSON
+
+});
+
+// Toggle Classes for Fixed First Column
+$(function () {
+
+    $("#btn-toggle").click(function(){
+        $("td:first-child, th:first-child").each(function() {
+            $(this).toggleClass("fixed-col");
+        $("td:nth-child(2), th:nth-child(2)").each(function() {
+            $(this).toggleClass("mleft");
+        });
+        });
     });
 });
+
+
