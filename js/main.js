@@ -1,9 +1,12 @@
 $(function () { 
 
+    // Pull JSON data from API url
     $.getJSON('https://api.myjson.com/bins/o81mx', function (data) {
 
+        // Loop through API data and set <td> value to
+        // applicable data in the dataset.
         $.each(data.incidents, function (i, incident) {
-            var tblRow =
+            var tableRow =
                 "<tr>" +
                 "<td>" + incident.Number + "</td>" +
                 "<td>" + incident.Caller + "</td>" +
@@ -14,8 +17,9 @@ $(function () {
                 "<td>" + incident.Updated + "</td>" +
                 "<td>" + incident.ShortDescription + "</td>" +
                 "</tr>"
-
-            $(tblRow).appendTo("#incident-data tbody");
+            
+            // Append tableRow to the body of the <table>
+            $(tableRow).appendTo("#incident-data tbody");
         });
     });
 });
