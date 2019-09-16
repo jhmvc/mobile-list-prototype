@@ -6,7 +6,6 @@
 table {
     position: relative;
     overflow: hidden;
-    /* table-layout: fixed; */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -33,7 +32,6 @@ thead th {
 }
 
 thead th:nth-child(1) {
-    position: relative;
     display: block;
     will-change: transform;
 }
@@ -51,9 +49,8 @@ tbody td {
     height: 100%;
 }
 
-tbody tr td:nth-child(1) {  /*the first cell in each tr*/
-    position: relative;
-    display: block; /*seperates the first column from the tbody*/
+tbody tr td:nth-child(1) { 
+    display: block; 
     height: 115px;
     will-change: transform;
 }
@@ -68,4 +65,11 @@ thead th:nth-child(1) {
 
 .table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
     white-space: normal;
+}
+
+/* Use this for the "select option for fixed first column 
+** 'tbody tr td:nth-child(1)' and 'thead th:nth-child(1)' both need the class
+*/
+.pos-relative {
+    position: relative;
 }

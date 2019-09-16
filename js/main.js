@@ -52,18 +52,3 @@ $(function () {
     });
 
 });
-
-// // Find max height of the cell and set all td's to it. 
-// var maxCellHeight = function () {
-//     var cellHeight = '';
-//     $('table td').each(function () {
-//         cellHeight = Math.max($(this).height(), cellHeight);
-//     }).height(cellHeight);
-
-//     // Set all cells to biggestCell height
-//     $('tbody tr td:nth-child(1)').height(cellHeight);
-
-//     console.log(cellHeight);
-// };
-
-// maxCellHeight();
