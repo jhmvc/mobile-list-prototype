@@ -1,34 +1,15 @@
-hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .wrap {
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
 
-.logo {
-    width: 50px;
-}
-
-/* Used by main.js to toggle fixed first column */
-.fixed-col {
-    border-right: solid 1px #DDEFEF;
-    position: absolute;
-    top: auto;
-    width: 96px;
-    background-color: #fff;
-}
-
-tr:nth-of-type(odd)>td.fixed-col {
-    background-color: #f9f9f9; /* Maintains striped table bg's when .fixed-col is applied */
-}
-
-.mleft {
-    margin-left: 96px;
-    display: block;
-    border-top: none;
+table {
+    position: relative;
+    overflow: hidden;
+    /* table-layout: fixed; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .table>thead>tr>th {
@@ -37,4 +18,54 @@ tr:nth-of-type(odd)>td.fixed-col {
 
 td:first-child, th:first-child {
     border-right: solid 1px #DDEFEF;
+}
+
+thead {
+    position: relative;
+    display: block;
+    overflow: visible;
+    will-change: transform;
+}
+
+thead th {
+    min-width: 150px;
+    height: 36px;
+}
+
+thead th:nth-child(1) {
+    position: relative;
+    display: block;
+    will-change: transform;
+}
+
+tbody {
+    position: relative;
+    display: block;
+    overflow: scroll;
+    height: 300px;
+}
+
+tbody td {
+    min-width: 150px;
+    min-height: 115px;
+    height: 100%;
+}
+
+tbody tr td:nth-child(1) {  /*the first cell in each tr*/
+    position: relative;
+    display: block; /*seperates the first column from the tbody*/
+    height: 115px;
+    will-change: transform;
+}
+
+tbody tr:nth-of-type(odd)>td {
+    background-color: #f9f9f9;
+}
+tbody tr:nth-of-type(even)>td,
+thead th:nth-child(1) {
+    background-color: #ffffff;
+}
+
+.table-responsive>.table>tbody>tr>td, .table-responsive>.table>tbody>tr>th, .table-responsive>.table>tfoot>tr>td, .table-responsive>.table>tfoot>tr>th, .table-responsive>.table>thead>tr>td, .table-responsive>.table>thead>tr>th {
+    white-space: normal;
 }
